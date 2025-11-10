@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduTrack – Simplify School Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="homepagedashboard.css" />
+  
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">🎓</span>
+        <span class="brand-text">EduTrack</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" id="navToggle">
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a class="btn btn-ghost" href="login.html">Login</a></li>
+        <li><a class="btn" href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <!-- animated background -->
+    <div class="bg-layer gradient"></div>
+    <div class="bg-layer floaters">
+      <span style="top:10%;left:5%">📚</span>
+      <span style="top:22%;left:85%">✏️</span>
+      <span style="top:70%;left:12%">🏫</span>
+      <span style="top:58%;left:80%">🧮</span>
+      <span style="top:35%;left:45%">🧪</span>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-copy glass">
+        <div class="pill">✨ Welcome to the Future of Education Management</div>
+        <h1>Simplify School Operations</h1>
+        <p>Manage students, teachers, and reports from one dashboard. Streamline your institution with powerful tools designed for modern education.</p>
+        <div class="cta">
+          <a class="btn" href="login.html">Login to Dashboard</a>
+          <a class="btn btn-ghost" href="register.html">Register School</a>
+        </div>
+      </div>
+
+      <div class="hero-card glass">
+        <div class="cards">
+          <div class="mini-card">
+            <div class="mini-ico">👥</div>
+            <div class="mini-title">Students</div>
+            <div class="mini-sub">Profiles & enrollment</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-ico">📝</div>
+            <div class="mini-title">Attendance</div>
+            <div class="mini-sub">Daily & real-time</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-ico">📊</div>
+            <div class="mini-title">Reports</div>
+            <div class="mini-sub">Grades & analytics</div>
+          </div>
+          <div class="wide-card">
+            <div class="wide-left">🗓️</div>
+            <div>
+              <div class="wide-title">Timetable ready</div>
+              <div class="wide-sub">Generate schedules with conflict checks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Modules -->
+  <section id="about" class="about container">
+    <header class="section-head">
+      <h2>Everything you need in one place</h2>
+      <p>Modular tools that grow with your institution.</p>
+    </header>
+
+    <div class="grid modules">
+      <article class="card">
+        <div class="card-ico">👥</div>
+        <h3>Student Management</h3>
+        <p>Enroll students, manage profiles, and maintain academic records seamlessly.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">📝</div>
+        <h3>Attendance Tracking</h3>
+        <p>Real-time attendance with automated notifications to parents and admins.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">📊</div>
+        <h3>Grades & Reports</h3>
+        <p>Create report cards, record assessments, and visualize performance trends.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">🗓️</div>
+        <h3>Timetable Management</h3>
+        <p>Build class schedules, assign rooms, and avoid conflicts effortlessly.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">📖</div>
+        <h3>Course Management</h3>
+        <p>Organize subjects, units, and learning resources for each grade level.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">📈</div>
+        <h3>Analytics Dashboard</h3>
+        <p>Track KPIs like attendance, grades, and engagement at a glance.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">🔔</div>
+        <h3>Notifications</h3>
+        <p>Send announcements and alerts via email, SMS, or in-app messages.</p>
+      </article>
+      <article class="card">
+        <div class="card-ico">🛡️</div>
+        <h3>Security & Privacy</h3>
+        <p>Role-based access, audit logs, and secure data handling policies.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="faqs container">
+    <header class="section-head">
+      <h2>Frequently Asked Questions</h2>
+    </header>
+
+    <div class="accordion glass" id="faqList">
+      <details open>
+        <summary>How do I register my school?</summary>
+        <div class="answer">
+          Click “Register School” and fill in basic details. Your institution space is created instantly so you can invite staff and import students.
+        </div>
+      </details>
+
+      <details>
+        <summary>Is data secure?</summary>
+        <div class="answer">
+          Yes. We use encryption in transit and at rest, role-based access control, and regular backups to keep your data safe.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can teachers log in separately?</summary>
+        <div class="answer">
+          Absolutely. Admins, teachers, students, and parents each have secure logins with appropriate permissions.
+        </div>
+      </details>
+
+      <details>
+        <summary>What devices are supported?</summary>
+        <div class="answer">
+          Any modern browser on desktop, tablet, or mobile. The UI is responsive and touch-friendly.
+        </div>
+      </details>
+
+      <details>
+        <summary>How much does it cost?</summary>
+        <div class="answer">
+          Start free for small schools. Upgrade anytime for advanced analytics, integrations, and priority support.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> EduTrack. All rights reserved.</p>
+      <nav class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const btn = document.getElementById('navToggle');
+    const links = document.getElementById('nav-links');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+    });
+
+    // close menu when clicking a link (mobile)
+    document.querySelectorAll('#nav-links a').forEach(a=>{
+      a.addEventListener('click', ()=> links.classList.remove('open'));
+    });
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

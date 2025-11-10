@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Login • EduTrack</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header (back to home on the right, no underline) -->
+  <header class="topbar">
+   
+      <span class="badge">🎓</span>
+      <span>EduTrack</span>
+
+
+    <a href="homepagedashboard.html" class="back-link">Back to Home →</a>
+  </header>
+
+  <!-- Centered popup card -->
+  <main class="stage">
+    <section class="card">
+      <h1 class="title">School Login</h1>
+      
+
+      <form class="form" id="loginForm" novalidate>
+        <label class="field">
+          <span>School Name *</span>
+          <input type="text" id="schoolName" required />
+        </label>
+
+        <label class="field">
+          <span>School Code *</span>
+          <input type="text" id="schoolCode" required />
+        </label>
+
+        <button class="btn" type="submit">Login</button>
+      </form>
+
+      <p class="foot-note">
+        Don’t have an account?
+        <a class="inline-link" href="register.html">Register your school</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Basic demo handling
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('schoolName').value.trim();
+      const code = document.getElementById('schoolCode').value.trim();
+      if (!name || !code) {
+        alert('Please fill both fields.');
+        return;
+      }
+      // TODO: replace with your real auth
+      alert('Logged in (demo). Route to dashboard…');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login • EduTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <!-- Back to Home (top-right) -->
+  <a class="back-home" href="homepagedashboard.html">Back to Home</a>
+
+  <!-- Page gradient / blur background -->
+  <div class="bg"></div>
+
+  <!-- Modal (popup) -->
+  <div class="modal">
+    <div class="card">
+      <button class="close" aria-label="Close" onclick="window.history.back?.();">×</button>
+
+      <div class="brand">
+        <div class="badge">🎓</div>
+        <div class="brand-text">EduTrack</div>
+      </div>
+
+      <h1 class="title">Welcome back</h1>
+      <p class="subtitle">Enter your school details to access the dashboard.</p>
+
+      <form id="loginForm" class="form" novalidate>
+        <div class="field">
+          <label for="schoolName">School Name *</label>
+          <input id="schoolName" name="schoolName" type="text" placeholder="e.g., Greenwood High" required />
+        </div>
+
+        <div class="field">
+          <label for="schoolCode">School Code *</label>
+          <input id="schoolCode" name="schoolCode" type="text" placeholder="e.g., GW-1023" required />
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Login</button>
+          <a class="btn-ghost" href="register.html">Register School</a>
+        </div>
+        <p class="status" id="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        statusEl.textContent = 'Please fill in both fields.';
+        form.reportValidity();
+        return;
+      }
+      // Demo feedback
+      statusEl.textContent = '✔ Logged in (demo). Redirecting to dashboard...';
+    });
+  </script>
+</body>
+</html>
