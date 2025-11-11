@@ -157,29 +157,27 @@ select{
   text-align:center; color: var(--muted);
   margin: 26px 0 40px;
 }
-/* Back to Home (top right) */
-.back-wrapper{
-  width: min(1200px, 92%);
-  margin: 0 auto;
+.top-bar {
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  padding-top: 18px;
+  justify-content: flex-end;   /* Aligns button to the right */
+  padding: 20px 40px;          /* Space from the edges */
 }
 
-.back-link{
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--primaryA);
+.back-btn {
+  text-decoration: none;       /* Remove underline */
   background: #ffffff;
-  border: 1px solid #dfe3ff;
-  padding: 8px 14px;
-  border-radius: 999px;
+  color: #4b3de3;              /* Purple text */
+  border: 1px solid #e1ddff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
   transition: 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
-.back-link:hover{
-  background: #f2f4ff;
-  border-color: var(--primaryA);
-  box-shadow: 0 4px 12px rgba(99,102,241,.25);
+.back-btn:hover {
+  background: #4b3de3;
+  color: white;
+  border-color: #4b3de3;
 }
