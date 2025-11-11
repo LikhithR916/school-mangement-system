@@ -3,66 +3,346 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login • EduTrack</title>
+  <title>School Registration • EduTrack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="register.css" />
 </head>
 <body>
-  <!-- Back to Home (top-right) -->
-  <a class="back-home" href="homepagedashboard.html">Back to Home</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      
+        <span class="badge">🎓</span>
+        <span class="brand-text">EduTrack</span>
+      <div class="top-bar">
+  <a href="homepagedashboard.html" class="back-btn">← Back to Home</a>
+</div>
 
-  <!-- Page gradient / blur background -->
-  <div class="bg"></div>
-
-  <!-- Modal (popup) -->
-  <div class="modal">
-    <div class="card">
-      <button class="close" aria-label="Close" onclick="window.history.back?.();">×</button>
-
-      <div class="brand">
-        <div class="badge">🎓</div>
-        <div class="brand-text">EduTrack</div>
-      </div>
-
-      <h1 class="title">Welcome back</h1>
-      <p class="subtitle">Enter your school details to access the dashboard.</p>
-
-      <form id="loginForm" class="form" novalidate>
-        <div class="field">
-          <label for="schoolName">School Name *</label>
-          <input id="schoolName" name="schoolName" type="text" placeholder="e.g., Greenwood High" required />
-        </div>
-
-        <div class="field">
-          <label for="schoolCode">School Code *</label>
-          <input id="schoolCode" name="schoolCode" type="text" placeholder="e.g., GW-1023" required />
-        </div>
-
-        <div class="actions">
-          <button class="btn" type="submit">Login</button>
-          <a class="btn-ghost" href="register.html">Register School</a>
-        </div>
-        <p class="status" id="status" aria-live="polite"></p>
-      </form>
     </div>
-  </div>
+  </header>
+  
 
+
+  <main class="container">
+    <h1 class="h1">Register Your School</h1>
+    <p class="lead">Create your institution space and invite your team. All fields marked * are required.</p>
+
+    <form class="grid grid-2" id="schoolForm" novalidate>
+      <!-- 1. Basic School Information -->
+      <section class="card">
+        <h2>1) Basic School Information</h2>
+        <div class="body">
+          <div class="field">
+            <label for="schoolName">School Name *</label>
+            <input id="schoolName" name="schoolName" type="text" placeholder="e.g., Greenwood High" required>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="schoolCode">School Code / Registration ID *</label>
+              <input id="schoolCode" name="schoolCode" type="text" placeholder="e.g., GW-1023" required>
+            </div>
+            <div class="field">
+              <label for="estYear">Establishment Year</label>
+              <input id="estYear" name="estYear" type="number" min="1800" max="2099" placeholder="e.g., 2001">
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="schoolType">Type of School *</label>
+              <select id="schoolType" name="schoolType" required>
+                <option value="">Select</option>
+                <option>Public</option>
+                <option>Private</option>
+                <option>International</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="board">Board / Affiliation *</label>
+              <select id="board" name="board" required>
+                <option value="">Select</option>
+                <option>CBSE</option>
+                <option>ICSE</option>
+                <option>State Board</option>
+                <option>IB</option>
+                <option>Cambridge (IGCSE)</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="medium">Medium of Instruction</label>
+              <input id="medium" name="medium" type="text" placeholder="e.g., English, Hindi">
+            </div>
+            <div class="field">
+              <label for="subdomain">Suggested Subdomain</label>
+              <input id="subdomain" name="subdomain" type="text" placeholder="auto from school name (e.g., greenwood.edutrack.app)" readonly>
+              <p class="helper">Auto-generated from your school name. You can customize later.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Address Details -->
+      <section class="card">
+        <h2>2) Address Details</h2>
+        <div class="body">
+          <div class="field">
+            <label for="street">Street Address *</label>
+            <input id="street" name="street" type="text" placeholder="e.g., 12, Lake Road" required>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="district">District</label>
+              <input id="district" name="district" type="text" placeholder="e.g., South Bengaluru">
+            </div>
+            <div class="field">
+              <label for="city">City / Town *</label>
+              <input id="city" name="city" type="text" placeholder="e.g., Bengaluru" required>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="state">State / Province *</label>
+              <input id="state" name="state" type="text" placeholder="e.g., Karnataka" required>
+            </div>
+            <div class="field">
+              <label for="country">Country *</label>
+              <input id="country" name="country" type="text" placeholder="e.g., India" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="zip">Pincode / ZIP Code *</label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="e.g., 560001" required>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Contact Information -->
+      <section class="card">
+        <h2>3) Contact Information</h2>
+        <div class="body">
+          <div class="field">
+            <label for="email">Official School Email *</label>
+            <input id="email" name="email" type="email" placeholder="e.g., admin@greenwood.edu" required>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="phone">Phone Number *</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="field">
+              <label for="website">Website (optional)</label>
+              <input id="website" name="website" type="url" placeholder="https://example.com">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Administrator / Principal Details -->
+      <section class="card">
+        <h2>4) Administrator / Principal Details</h2>
+        <div class="body">
+          <div class="row-2">
+            <div class="field">
+              <label for="principal">Principal / Head Name *</label>
+              <input id="principal" name="principal" type="text" required>
+            </div>
+            <div class="field">
+              <label for="contactPerson">Admin / Contact Person *</label>
+              <input id="contactPerson" name="contactPerson" type="text" required>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="adminEmail">Admin Email ID *</label>
+              <input id="adminEmail" name="adminEmail" type="email" required>
+            </div>
+            <div class="field">
+              <label for="adminMobile">Admin Mobile Number *</label>
+              <input id="adminMobile" name="adminMobile" type="tel" required>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Login Credentials -->
+      <section class="card">
+        <h2>5) Login Credentials (School Admin)</h2>
+        <div class="body">
+          <div class="row-2">
+            <div class="field">
+              <label for="username">Username *</label>
+              <input id="username" name="username" autocomplete="username" required>
+            </div>
+            <div class="field">
+              <label for="password">Password *</label>
+              <div class="pw-wrap">
+                <input id="password" name="password" type="password" autocomplete="new-password" required>
+                <button type="button" class="pw-toggle" data-target="password">Show</button>
+              </div>
+              <div class="strength" aria-hidden="true"><span></span></div>
+              <p class="helper">Use 8+ chars with letters, numbers & symbols.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirm">Confirm Password *</label>
+            <div class="pw-wrap">
+              <input id="confirm" name="confirm" type="password" autocomplete="new-password" required>
+              <button type="button" class="pw-toggle" data-target="confirm">Show</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Additional Information -->
+      <section class="card">
+        <h2>6) Additional Information (optional)</h2>
+        <div class="body">
+          <div class="upload">
+            <div class="logo" id="logoPreview">🏫</div>
+            <div class="field" style="flex:1">
+              <label for="logo">School Logo Upload</label>
+              <input id="logo" name="logo" type="file" accept="image/*">
+              <p class="helper">PNG / JPG, under 2MB for best results.</p>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:12px">
+            <label for="motto">School Motto / Description</label>
+            <textarea id="motto" name="motto" placeholder="Brief description of your school..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Declaration & Agreement -->
+      <section class="card">
+        <h2>7) Declaration and Agreement</h2>
+        <div class="body">
+          <label class="check">
+            <input type="checkbox" id="agreeAccurate" required>
+            <span>I confirm that the information provided is accurate.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="agreeTerms" required>
+            <span>I agree to the Terms & Conditions.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 8. Actions -->
+      <section class="card">
+        <h2>8) Submit</h2>
+        <div class="body actions">
+          <button class="btn" type="submit">Register School</button>
+          <button class="btn btn-outline" type="reset">Reset</button>
+          <span class="pill" id="formStatus" aria-live="polite"></span>
+        </div>
+      </section>
+    </form>
+
+    <footer class="foot">
+      <p>© <span id="year"></span> EduTrack. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Minimal JS (kept in HTML for simplicity) -->
   <script>
-    const form = document.getElementById('loginForm');
-    const statusEl = document.getElementById('status');
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    form.addEventListener('submit', (e) => {
+    // Generate subdomain from school name
+    const nameEl = document.getElementById('schoolName');
+    const subdomainEl = document.getElementById('subdomain');
+    function slugify(v){
+      return v.toLowerCase()
+        .replace(/['`]/g,'')
+        .replace(/[^a-z0-9]+/g,'-')
+        .replace(/(^-|-$)/g,'')
+        .slice(0,40);
+    }
+    nameEl.addEventListener('input', ()=>{
+      const slug = slugify(nameEl.value);
+      subdomainEl.value = slug ? slug + '.edutrack.app' : '';
+    });
+
+    // Logo preview
+    document.getElementById('logo').addEventListener('change', (e)=>{
+      const f = e.target.files?.[0];
+      const box = document.getElementById('logoPreview');
+      if(!f){ box.innerHTML = '🏫'; return; }
+      if(!f.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        box.innerHTML = '<img alt="logo preview">';
+        box.querySelector('img').src = reader.result;
+      };
+      reader.readAsDataURL(f);
+    });
+
+    // Password show/hide
+    document.querySelectorAll('.pw-toggle').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.dataset.target;
+        const input = document.getElementById(id);
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        btn.textContent = type === 'password' ? 'Show' : 'Hide';
+      });
+    });
+
+    // Strength meter
+    const pw = document.getElementById('password');
+    const bar = document.querySelector('.strength > span');
+    function scorePassword(s){
+      let score = 0;
+      if(!s) return score;
+      const letters = {};
+      for (let i=0;i<s.length;i++){ letters[s[i]] = (letters[s[i]]||0)+1; score += 5.0/letters[s[i]]; }
+      const variations = { digits: /\d/.test(s), lower: /[a-z]/.test(s), upper: /[A-Z]/.test(s), nonWords: /\W/.test(s) };
+      let variationCount = 0; for (let k in variations){ variationCount += variations[k] ? 1 : 0; }
+      score += (variationCount-1)*10; return parseInt(score);
+    }
+    pw.addEventListener('input', ()=>{
+      const s = scorePassword(pw.value);
+      const pct = Math.max(6, Math.min(100, s));
+      bar.style.width = pct + '%';
+    });
+
+    // Basic form validation & confirmation
+    const form = document.getElementById('schoolForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      if (!form.checkValidity()) {
-        statusEl.textContent = 'Please fill in both fields.';
+      if(!form.checkValidity()){
+        statusEl.textContent = 'Please fill all required fields.';
+        statusEl.classList.add('warn');
         form.reportValidity();
         return;
       }
-      // Demo feedback
-      statusEl.textContent = '✔ Logged in (demo). Redirecting to dashboard...';
+      const pass = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      if(pass !== confirm){
+        statusEl.textContent = 'Passwords do not match.';
+        statusEl.classList.add('warn');
+        return;
+      }
+      statusEl.textContent = '✔ School registered (demo). You can now proceed to login.';
+      statusEl.classList.remove('warn');
     });
   </script>
 </body>
 </html>
+
